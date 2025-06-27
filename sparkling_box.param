@@ -1,0 +1,60 @@
+
+
+%__________________________________________________________________________________________
+%                                                                         GLOBAL PARAMETERS
+
+OMPcores           72        % Number of cores for OpenMP sections
+
+BoxSize         268.   %   Boxsize   in   Mpc/h
+MaxRadiusSearch  50.0       % Maximum void radius in Mpc/h
+ProxyGridSize     1.0       % Proxy for the size of the grid in Mpc/h   
+DeltaThreshold   -0.7       % Integrated density contrast threshold
+DeltaSeed        -0.4       % Integrated density contrast for seed Voronoi cells 
+OverlapTol        0.0       % Overlap tolerance
+
+FormatTracers     ASCII                  % ASCII | GADGET | MXXL | BINARY
+NumFiles          1                     % Only for GADGET and MXXL
+FileTracers   /u/chahermann/Sparkling/input/emu_input/L400-N128_set1_emu_runID.dat   %   File   with   tracers
+FileVoids   /u/chahermann/Sparkling/output/emu_output/void_L400-N128_set1_emu_runID.dat   %   File   for   void   catalogue
+
+ScalePos          1.0        % Convert positions to Mpc/hq
+ScaleVel          1.0        % Convert velocities to km/s
+
+%_________________________________________________________________________________________
+%                                                                                CENTERING
+
+NumRanStop        50        % Number of steps without any increment bigger than RadIncrement
+RadIncrement     0.0        % Relative increment of Radius in random walk
+RandomSeed      1234        % Seed for random numbers sequences (non-negative integer)
+
+%_________________________________________________________________________________________
+%                                                               REDSHIFT-SPACE DISTORTIONS
+
+RSDist            0
+Redshift          0   
+OmegaMatter       0.31
+OmegaLambda       0.69
+Hubble            0.67
+
+%_________________________________________________________________________________________
+%                                                                  GEOMETRICAL DISTORTIONS
+
+GDist             0
+FidOmegaMatter    0.2  
+FidOmegaLambda    0.8 
+FidHubble         0.7
+
+%_________________________________________________________________________________________
+%                                                                            VOID PROFILES
+
+WriteProfiles     0                         % Write void profiles: 0 = No | 1 = ascii | 2 = binary
+MaxProfileDist    3.0                       % Maximun distance to compute profile [Rvoid]           
+NumProfileBins    30                        % Number of bins 
+PathProfiles      data/profiles/            % Path to save profile files
+
+%_________________________________________________________________________________________
+%                                                            VOID VELOCITY AND MASS CENTER
+
+InnerShell    0.8
+OuterShell    1.2
+
